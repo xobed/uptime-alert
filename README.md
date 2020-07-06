@@ -21,7 +21,9 @@ RETRY_LIMIT_SECONDS
 TODO
 
 ### Docker swarm service
-TODO
+```
+docker service create -e MONITORED_URLS="https://example.com/" -e SENTRY_DSN="https://token@mysentry.ingest.sentry.io/123" --name uptime-alert --restart-delay=60s --detach xobed/uptime-alert
+```
 
 ### Google Cloud Run
 TODO
