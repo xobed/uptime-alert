@@ -18,6 +18,11 @@ RETRY_LIMIT_SECONDS
 
 ## Deployment options
 ### Kubernetes
+Edit `kubernetes-job.yaml` before applying - change monitored URLs and Sentry DSN
+```
+wget https://raw.githubusercontent.com/xobed/uptime-alert/master/kubernetes-job.yaml
+kubectl -f kubernetes-job.yaml
+```
 
 ### Docker swarm service
 ```
@@ -30,5 +35,6 @@ TODO
 ## Development
 Build locally
 ```shell script
-docker build . -t uptimealert
+docker build . -t xobed/uptime-alert
+docker run -it --rm -e MONITORED_URLS="https://example.com/" -e SENTRY_DSN="https://47e2b1c1edbe4504a6b6bda670bd7fb6@o161851.ingest.sentry.io/1734601" --name uptime-alert xobed/uptime-alert
 ```
