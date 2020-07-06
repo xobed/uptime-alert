@@ -1,4 +1,3 @@
-import logging
 import os
 from typing import List
 
@@ -32,8 +31,7 @@ retry_limit_seconds = os.environ.get('RETRY_LIMIT_SECONDS', default=60)
 def check_url(url_to_check: str):
     response = requests.get(url_to_check)
     response.raise_for_status()
-    logging.info(f'{url} check passed')
-
+    print(f'{url} check passed')
 
 for url in urls:
     try:
