@@ -18,7 +18,6 @@ RETRY_LIMIT_SECONDS
 
 ## Deployment options
 ### Kubernetes
-TODO
 
 ### Docker swarm service
 ```

@@ -1,0 +1,21 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: uptime-alert
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: uptime-alert              
+              image: xobed/uptime-alert
+              env:
+                - name: MONITORED_URLS
+                  value: "https://example.com/"
+                - name: SENTRY_DSN
+                  value: "https://token@mysentry.ingest.sentry.io/123"
+                - name: RETRY_LIMIT_SECONDS
+                  value: "60"
