@@ -26,10 +26,11 @@ kubectl -f kubernetes-job.yaml
 
 ### Kubernetes with Helm
 ```
+helm repo add uptime-alert https://xobed.github.io/uptime-alert/helm/
 helm upgrade --install uptime-alert \
     --set monitored_urls="https://example.com/" \
     --set sentry_dsn="https://token@mysentry.ingest.sentry.io/123" \
-    ./helm/uptime-alert
+    uptime-alert
 ```
 
 ### Docker swarm service
