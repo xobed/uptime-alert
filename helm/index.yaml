@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  uptime-alert:
+  - apiVersion: v2
+    created: "2020-07-07T11:13:56.433735+02:00"
+    digest: cf816dc3352653316d67e6ad8e26e12ea3a04d898736d338f810abf6865713cd
+    home: https://github.com/xobed/uptime-alert
+    name: uptime-alert
+    urls:
+    - uptime-alert-0.0.1.tgz
+    version: 0.0.1
+generated: "2020-07-07T11:13:56.433017+02:00"

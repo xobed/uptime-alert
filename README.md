@@ -24,17 +24,29 @@ wget https://raw.githubusercontent.com/xobed/uptime-alert/master/kubernetes-job.
 kubectl -f kubernetes-job.yaml
 ```
 
+### Kubernetes with Helm
+```
+helm upgrade --install uptime-alert \
+    --set monitored_urls="https://example.com/" \
+    --set sentry_dsn="https://token@mysentry.ingest.sentry.io/123" \
+    ./helm/uptime-alert
+```
+
 ### Docker swarm service
 ```
 docker service create -e MONITORED_URLS="https://example.com/" -e SENTRY_DSN="https://token@mysentry.ingest.sentry.io/123" --name uptime-alert --restart-delay=60s --detach xobed/uptime-alert
 ```
 
-### Google Cloud Run
-TODO
-
 ## Development
-Build locally
+### Build locally
 ```shell script
 docker build . -t xobed/uptime-alert
-docker run -it --rm -e MONITORED_URLS="https://example.com/" -e SENTRY_DSN="https://47e2b1c1edbe4504a6b6bda670bd7fb6@o161851.ingest.sentry.io/1734601" --name uptime-alert xobed/uptime-alert
+docker run -it --rm -e MONITORED_URLS="https://example.com/" -e SENTRY_DSN="https://token@mysentry.ingest.sentry.io/123" --name uptime-alert xobed/uptime-alert
+```
+
+### Package helm chart
+```
+cd helm
+helm package uptime-alert
+helm repo index .
 ```

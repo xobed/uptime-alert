@@ -1,0 +1,3 @@
+monitored_urls: ""
+sentry_dsn: ""
+retry_limit_seconds: "60"

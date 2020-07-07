@@ -1,0 +1,6 @@
+name: uptime-alert
+version: 0.0.1
+home: https://github.com/xobed/uptime-alert
+source:
+  - https://github.com/xobed/uptime-alert
+apiVersion: v2
