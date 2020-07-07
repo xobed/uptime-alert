@@ -24,7 +24,7 @@ urls: List = urls_string.split(',')
 if len(urls) == 0:
     raise Exception(no_urls_message)
 
-retry_limit_seconds = os.environ.get('RETRY_LIMIT_SECONDS', default=60)
+retry_limit_seconds = int(os.environ.get('RETRY_LIMIT_SECONDS', default=60))
 
 
 @retry(stop=stop_after_delay(retry_limit_seconds), wait=wait_fixed(5))
