@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: uptime-alert
 spec:
-  schedule: "*/5 * * * *"
+  schedule: {{ .Values.schedule | quote }}
   jobTemplate:
     spec:
       template:

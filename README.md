@@ -30,6 +30,8 @@ helm repo add uptime-alert https://xobed.github.io/uptime-alert/helm/
 helm upgrade --install uptime-alert \
     --set monitored_urls="https://example.com/" \
     --set sentry_dsn="https://token@mysentry.ingest.sentry.io/123" \
+    --set schedule="* * * * *" \
+    --set retry_limit_seconds="60" \
     uptime-alert
 ```
 
