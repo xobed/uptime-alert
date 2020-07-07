@@ -37,7 +37,13 @@ helm upgrade --install uptime-alert \
 
 ### Docker swarm service
 ```
-docker service create -e MONITORED_URLS="https://example.com/" -e SENTRY_DSN="https://token@mysentry.ingest.sentry.io/123" --name uptime-alert --restart-delay=60s --detach xobed/uptime-alert
+docker service create \
+    -e MONITORED_URLS="https://example.com/" \
+    -e SENTRY_DSN="https://token@mysentry.ingest.sentry.io/123" \
+    --name uptime-alert \
+    --restart-delay=60s \
+    --detach \
+    xobed/uptime-alert
 ```
 
 ## Development
